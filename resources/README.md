@@ -105,5 +105,5 @@ $ npm start
 ## Contact
 
 - Website [Henry Website](https://www.henrysdev.me/)
-- GitHub [@your-username](https://github.com/xHenrySx/)
+- GitHub [xHenrySx](https://github.com/xHenrySx/)
 - [Email](mailto:enrisal2000@gmail.com)
