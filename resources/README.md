@@ -8,7 +8,6 @@
 
 <div align="center">
   <h3>
-    <span> | </span>
     <a href="https://github.com/xHenrySx/Image-Uploader">
       Solution
     </a>
