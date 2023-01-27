@@ -1,0 +1,140 @@
+
+
+/* Todos los div que son d-flex */
+div .d-flex {
+    height: 100vh;
+}
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.card-header {
+    border-bottom: 0px !important;
+    background-color: #FFFF !important;
+}
+
+.card-header h4 {
+    font-size: 18px !important;
+    line-height: 27px !important;
+    letter-spacing: -0.035em !important;
+}
+
+.card-header p {
+    font-size: 10px !important;
+    line-height: 15px !important;
+    color: #828282;
+}
+
+
+.input-area {
+    position: relative;
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+    padding: 0px !important;
+    background-color: #F6F8FB;
+    border: 1px dashed #97BEF4;
+    border-radius: 12px;
+    width: 338px;
+    height: 218.9px;
+}
+
+.card-footer {
+    border-top: 0px !important;
+    background-color: #FFFFFF !important;
+}
+
+.card-footer .btn {
+    background: #2F80ED !important;
+    border-radius: 8px !important;
+}
+
+
+.help-text {
+    color: #BDBDBD;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.035em;
+}
+
+input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.loader {
+    width: 400.36px;
+    height: 143.57px;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48;
+  color: #219653;
+}
+
+.image-uploaded {
+    width: 338px;
+    height: 224.4px;
+    border-radius: 12px;
+}
+
+.image-uploaded img {
+    /* Make the image adjust to the div size */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+
+}
+
+.link-bg {
+    position: relative;
+    height: 34px;
+    background: #F6F8FB;
+    /* Gray 5 */
+    margin: auto 31.18px auto 31.18px !important;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+}
+
+.link-bg p {
+    margin-bottom: 0rem !important;
+}
+
+
+
+
+#copy-btn {
+
+    /* Colocarlo en el lado derecho */
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    border: 0px;
+
+    width: 74px !important;
+    height: 30px !important;
+    margin: 1px 1px  2px auto !important;
+
+    /* Blue 1 */
+    background: #2F80ED !important;
+    border-radius: 8px !important;
+    font-size: 8px !important;
+    line-height: 12px !important;
+    /* identical to box height */
+    letter-spacing: -0.035em !important;
+
+}
