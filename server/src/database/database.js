@@ -1,17 +1,14 @@
 const { Client } = require('pg');
-
+const dotenv = require('dotenv');
+dotenv.config();
 // Create a new client
 
-console.log(process.env.PGUSER);
-
 const connection = {
-    user: process.env.PGUSER,
-    host: process.env.PGHOST,
-    database: process.env.PGDATABASE,
-    password: process.env.PGPASSWORD,
-    port: 5432
+    connectionString: process.env.DATABASE_URL,
+    ssl:require
 }
 
+const connectionString = process.env.DATABASE_URL;
 
 // Connect to the database and create a table named images with image BYTEA NOT NULL if it doesn't exists
 
@@ -39,6 +36,7 @@ async function connect(client) {
 async function insertImage(image) {
 
     try {
+        
         const client = new Client(
             connection
         );
@@ -70,6 +68,9 @@ async function getImage(id) {
         );
         await client.end()
         .then(() => console.log("Connection closed"));
+        if (result.rows.length === 0) {
+            return false;
+        }
         return result.rows[0].image;
     } catch (err) {
         console.log(err);
