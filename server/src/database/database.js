@@ -3,8 +3,11 @@ const dotenv = require('dotenv');
 dotenv.config();
 // Create a new client
 
+const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
+const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
+
 const connection = {
-    connectionString: process.env.DATABASE_URL,
+    connectionString: URL,
     ssl:require
 }
 
@@ -23,7 +26,7 @@ async function connect(client) {
         );
         console.log("Connected to the database");
     } catch (err) {
-        console.log(err);
+        console.log("Error en la base de datos: "+ err);
     }
 }
 
@@ -41,6 +44,7 @@ async function insertImage(image) {
             connection
         );
         await connect(client);
+        console.log("Connected to the database");
         const result = await client.query(
             `INSERT INTO images (image) VALUES ($1) RETURNING id`, [image]
         );
@@ -48,7 +52,7 @@ async function insertImage(image) {
         .then(() => console.log("Connection closed"));
         return result.rows[0].id;
     } catch (err) {
-        console.log(err);
+        console.log("Error en la base de datos: "+ err);
         return false;
     }
 
@@ -73,7 +77,7 @@ async function getImage(id) {
         }
         return result.rows[0].image;
     } catch (err) {
-        console.log(err);
+        console.log("Error en la base de datos: "+ err);
         return false;
     }
 }
