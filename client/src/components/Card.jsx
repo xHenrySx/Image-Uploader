@@ -43,22 +43,28 @@ export default function Card() {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.readAsDataURL(file);
-        reader.onload = async () => {
-            const image = reader.result;
-            // Send the image to the server post request
-            const response = await axios.post(api, { image });
-            if (response.data.id) {
-                setImageLinkComplete(
-                    api + "/" + response.data.id
-                );
-                setImageSrc(image);
-                setIsUploaded(true);
-                setIsLoading(false);
-                setProgress(0);
-            } else {
-                alert("Error uploading the image");
-            }
-        };
+        try {
+	        reader.onload = async () => {
+	            const image = reader.result;
+	            // Send the image to the server post request
+	            const response = await axios.post(api, { image });
+	            if (response.data.id) {
+	                setImageLinkComplete(
+	                    api + "/" + response.data.id
+	                );
+	                setImageSrc(image);
+	                setIsUploaded(true);
+	                setIsLoading(false);
+	                setProgress(0);
+	            } else {
+	                alert("Error uploading the image");
+	            }
+	        };
+        } catch (error) {
+            setIsLoading(false);
+            setProgress(0);
+            alert("Error uploading the image: " + error);
+        }
     }
 
     function handleChoose() {
