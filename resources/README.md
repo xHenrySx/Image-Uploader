@@ -37,22 +37,17 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://raw.githubusercontent.com/xHenrySx/Image-Uploader/master/resources/app.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
-
+The goal of this project is to create a simple image uploader that allows users to upload images to a server. The user should be able to upload one image at once with a low file size and see a preview of the uploaded image.
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Node.js](https://nodejs.org/)
+- [BootStrap](https://getbootstrap.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ## Features
 
@@ -64,16 +59,42 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 <!-- Example: -->
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer and [PostgreSQL](https://www.postgresql.org/download/). Open two terminals, in the first terminal from your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/xHenrySx/Image-Uploader
+
+#Log into PostgreSQL (Windows)
+$ psql -U postgres
+
+#Create a database
+$ CREATE DATABASE image_gallery;
+
+#Exit PostgreSQL  
+$ \q
+
+#Go to server folder
+$ cd server
 
 # Install dependencies
 $ npm install
 
-# Run the app
+# Run the app on port 5000
+$ npm start
+```
+
+In the second terminal from your command line:
+
+```bash
+
+#Go to server folder
+$ cd client
+
+# Install dependencies
+$ npm install
+
+# Run the app on port 3000
 $ npm start
 ```
 
@@ -83,10 +104,10 @@ $ npm start
 
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
 - [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Website [Henry Website](https://www.henrysdev.me/)
+- GitHub [@your-username](https://github.com/xHenrySx/)
+- [Email](mailto:enrisal2000@gmail.com)

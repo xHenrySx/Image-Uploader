@@ -9,10 +9,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Enrique Saldivar",
   "license": "ISC",
   "description": ""
 }
