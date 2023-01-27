@@ -8,6 +8,8 @@
 
 <div align="center">
   <h3>
+    <a href="https://image-uploader-f3ff4.web.app/"> Demo </a>
+    <span> | </span>
     <a href="https://github.com/xHenrySx/Image-Uploader">
       Solution
     </a>
@@ -55,6 +57,20 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 <!-- Example: -->
 
+Before start you have to enable dotenv by uncomment the code in the database.js file and change the api route to the comment route in client/src/components/Card.jsx.
+
+After that you have to construct your client connection  in the database.js file with the following format :
+```javascript
+const connection = {
+  user: 'postgres', //default user
+  host: 'localhost',
+  database: 'image_gallery',
+  password: '<yourpassword>',
+  port: 5432, //default port
+}
+```
+
+
 To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer and [PostgreSQL](https://www.postgresql.org/download/). Open two terminals, in the first terminal from your command line:
 
 ```bash
@@ -93,6 +109,9 @@ $ npm install
 # Run the app on port 3000
 $ npm start
 ```
+
+
+
 
 ## Acknowledgements
 

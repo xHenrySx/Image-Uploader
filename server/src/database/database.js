@@ -3,7 +3,6 @@ const { Client } = require('pg');
 // dotenv.config();
 // Create a new client
 
-console.log("PGUSER: "+ process.env.PGUSER);
 
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
@@ -12,6 +11,15 @@ const connection = {
     connectionString: URL,
     ssl:require,
 }
+
+// const connection = {
+//     user: 'postgres', //default user
+//     host: 'localhost',
+//     database: 'image_gallery',
+//     password: '<yourpassword>',
+//     port: 5432, //default port
+// }
+
 
 const connectionString = process.env.DATABASE_URL;
 

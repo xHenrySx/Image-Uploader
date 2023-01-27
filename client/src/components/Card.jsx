@@ -10,7 +10,7 @@ export default function Card() {
 
     const [imageLinkComplete, setImageLinkComplete] = React.useState("");
 
-    const api = "https://imageuploaderapi.onrender.com/images"
+    const api = "https://imageuploaderapi.onrender.com/images";
     // const api = "http://localhost:5000/images";
 
     React.useEffect(() => {
@@ -44,25 +44,21 @@ export default function Card() {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         try {
-	        reader.onload = async () => {
-	            const image = reader.result;
-	            // Send the image to the server post request
-	            const response = await axios.post(api, { image });
-	            if (response.data.id) {
-	                setImageLinkComplete(
-	                    api + "/" + response.data.id
-	                );
-	                setImageSrc(image);
-	                setIsUploaded(true);
-	                setIsLoading(false);
-	                setProgress(0);
-	            } else {
-	                alert("Error uploading the image");
-	            }
-	        };
+            reader.onload = async () => {
+                const image = reader.result;
+                // Send the image to the server post request
+                const response = await axios.post(api, { image });
+                if (response.data.id) {
+                    setImageLinkComplete(`${api}/${response.data.id}`);
+                    setImageSrc(image);
+                    setIsUploaded(true);
+                    setIsLoading(false);
+                    setProgress(0);
+                } else {
+                    alert("Error uploading the image");
+                }
+            };
         } catch (error) {
-            setIsLoading(false);
-            setProgress(0);
             alert("Error uploading the image: " + error);
         }
     }
