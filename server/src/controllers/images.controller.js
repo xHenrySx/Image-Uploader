@@ -21,8 +21,8 @@ async function getImageById(req, res) {
 }
 
 async function uploadImage(req, res) {
+    console.log("Trying to upload image");
     const image = req.body.image;
-    console.log(image);
     const id = await insertImage(image);
     if (id) {
        return res.status(200).json({ id });
