@@ -11,6 +11,7 @@ export default function Card() {
     const [imageLinkComplete, setImageLinkComplete] = React.useState("");
 
     const api = "https://imageuploaderapi.onrender.com/images"
+    // const api = "http://localhost:5000/images";
 
     React.useEffect(() => {
         if (progress < 100) {
@@ -44,31 +45,19 @@ export default function Card() {
         reader.readAsDataURL(file);
         reader.onload = async () => {
             const image = reader.result;
-            await axios
-                .post(
-                    api,
-                    { image },
-                    {
-                        onUploadProgress: (progressEvent) => {
-                            const { loaded, total } = progressEvent;
-                            let percent = Math.floor((loaded * 100) / total);
-                            setProgress(percent);
-                        },
-                    }
-                )
-                .then((res) => {
-                    setImageLinkComplete(
-                        api + res.data.id
-                    );
-                    setImageSrc(image);
-                    setIsUploaded(true);
-                    setIsLoading(false);
-                    setProgress(0);
-                })
-                .catch((err) => {
-                    setIsLoading(false);
-                    console.log(err);
-                });
+            // Send the image to the server post request
+            const response = await axios.post(api, { image });
+            if (response.data.id) {
+                setImageLinkComplete(
+                    api + "/" + response.data.id
+                );
+                setImageSrc(image);
+                setIsUploaded(true);
+                setIsLoading(false);
+                setProgress(0);
+            } else {
+                alert("Error uploading the image");
+            }
         };
     }
 

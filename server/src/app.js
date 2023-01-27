@@ -5,14 +5,14 @@ const cors = require('cors');
 // Create app
 const app = express();
 
-// Cors
-app.use(cors());
 
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Cors
+app.use(cors());
 // Routes
 
 app.use('/images', imagesRouter);
