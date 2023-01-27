@@ -9,9 +9,6 @@ const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=
 const connection = {
     connectionString: URL,
     ssl:require,
-    statement_timeout: 60000,
-    idle_in_transaction_session_timeout: 60000,
-    connectionTimeoutMillis: 60000,
 }
 
 const connectionString = process.env.DATABASE_URL;
@@ -47,7 +44,6 @@ async function insertImage(image) {
             connection
         );
         await connect(client);
-        console.log("Connected to the database");
         const result = await client.query(
             `INSERT INTO images (image) VALUES ($1) RETURNING id`, [image]
         );
