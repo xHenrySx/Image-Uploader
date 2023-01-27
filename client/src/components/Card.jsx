@@ -10,6 +10,8 @@ export default function Card() {
 
     const [imageLinkComplete, setImageLinkComplete] = React.useState("");
 
+    const api = "https://imageuploaderapi.onrender.com/images"
+
     React.useEffect(() => {
         if (progress < 100) {
             setTimeout(() => {
@@ -44,7 +46,7 @@ export default function Card() {
             const image = reader.result;
             await axios
                 .post(
-                    "http://localhost:5000/images",
+                    api,
                     { image },
                     {
                         onUploadProgress: (progressEvent) => {
@@ -56,7 +58,7 @@ export default function Card() {
                 )
                 .then((res) => {
                     setImageLinkComplete(
-                        "http://localhost:5000/images/" + res.data.id
+                        api + res.data.id
                     );
                     setImageSrc(image);
                     setIsUploaded(true);

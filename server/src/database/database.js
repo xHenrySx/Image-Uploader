@@ -3,10 +3,10 @@ const { Client } = require('pg');
 // Create a new client
 
 const connection = {
-    user: 'code',
-    host: 'localhost',
-    database: 'image_gallery',
-    password: '1234',
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
 }
 
 
