@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://image-uploader-f3ff4.web.app/"> Demo </a>
+    <a href="https:iuploader.henrysdev.me"> Demo </a>
     <span> | </span>
     <a href="https://github.com/xHenrySx/Image-Uploader">
       Solution
